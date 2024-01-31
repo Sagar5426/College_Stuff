@@ -1,0 +1,28 @@
+*{
+    font-family: Arial;
+    margin: 6px;
+    
+}
+body{
+    background-image: url(kratos.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    border: 2px solid black; 
+    color: blue;
+    padding: 4px;
+}
+
+
+div{
+    text-align: center;
+    background-color: rgba(165, 161, 161, 0.25);
+    
+}
+
+button{
+    width: 100px;
+    height: 60px;
+}
