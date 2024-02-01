@@ -35,10 +35,10 @@ void main(){
                           {4,5,6},
                           {7,8,9}};
 
-    printf("Addition: ");                      
+    printf("Addition: \n");                      
     addMatrix(matrix1,matrix2);
 
-    printf("Subtraction: ");
+    printf("Subtraction: \n");
     subtractMatrix(matrix1,matrix2);
 
 }
