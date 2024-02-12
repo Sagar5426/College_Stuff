@@ -1,0 +1,32 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+#navBar{
+    background-color: #0f1111;
+    height: 60px;
+}
+a{
+    margin-left: 8px;
+    margin-top: 4px;
+    margin-right: 200px;
+}
+button{
+    color: #fff;
+    background-color: #f08804;
+    padding: 3px;
+    margin-left: 5px ;
+    width: 60px;
+    border-radius: 10%;
+}
+
+#logo{
+    color: #f08804;
+    font-size: 25px;
+}
+input{
+    color: #0f1111;
+    padding: 3px;
+}

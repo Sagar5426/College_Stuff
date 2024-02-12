@@ -1,0 +1,54 @@
+
+
+
+.contentBox{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(198, 32, 255,0.5);
+    margin: 10px;
+    border: 2px solid black;
+}
+#content{
+    height: 705px;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+
+}
+#navBar{
+    background-color: #0f1111;
+    height: 60px;
+    color: #fff;
+}
+a{
+    margin-left: 8px;
+    margin-top: 4px;
+    margin-right: 200px;
+}
+button{
+    color: #fff;
+    background-color: #f08804;
+    padding: 3px;
+    margin-left: 5px ;
+    width: 60px;
+    border-radius: 10%;
+}
+
+#logo{
+    color: #f08804;
+    font-size: 25px;
+}
+input{
+    color: #0f1111;
+    padding: 3px;
+}
+
+footer{
+    background-color: #0f1111;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
