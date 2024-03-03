@@ -1,0 +1,21 @@
+
+.container {
+    display: flex;
+    flex-direction: row; /* Change flex direction to row */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 2px;
+}
+
+.combined-box {
+    width: 420px; /* width of the two boxes (200px + 200px + 20px margin) */
+    height: 100px;
+    background-color: lightcoral;
+    margin: 2px;
+}

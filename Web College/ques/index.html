@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Example</title>
+<style>
+    .container {
+        display: flex;
+        flex-direction: row; /* Change flex direction to row */
+        justify-content: center; /* Center the items horizontally */
+        align-items: center; /* Center the items vertically */
+    }
+
+    .box {
+        width: 250px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        padding: 10px;
+        position: relative; /* Required for absolute positioning of the image */
+    }
+
+    .combined-box {
+        width: 800px; /* width of the two boxes (250px + 250px+ 250px + 20px margin) */
+        height: 100px;
+        background-color: lightcoral;
+        margin: 10px;
+    }
+
+    .list-container {
+        list-style: none;
+        padding: 0;
+    }
+
+    .list-item {
+        margin-bottom: 5px;
+    }
+
+    .box img {
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="combined-box"></div>
+</div>
+<div class="container">
+    <div class="box">
+        <ul class="list-container">
+            <li class="list-item">Item 1</li>
+            <li class="list-item">Item 2</li>
+            <li class="list-item">Item 3</li>
+            <li class="list-item">Item 4</li>
+        </ul>
+    </div>
+    <div class="box">
+        <form>
+            Username: <input type="text" name="name" id="name"><br><br>
+            Password: <input type="text" name="password" id="password"><br><br>
+            <input type="submit">
+            <input type="reset">
+
+            
+        </form>
+    </div>
+    <div class="box">
+        <img src="mcd.jpg" alt="Mc Donald">
+    </div>
+</div>
+</body>
+</html>
