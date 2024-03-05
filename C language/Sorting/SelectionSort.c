@@ -20,6 +20,7 @@ void printArray(int arr[], int size){
         printf("%d ", arr[i]);
     }
 }
+
 void main(){
     int numbers[] = {5,2,6,76,86};
     selectionSort(numbers,5);
