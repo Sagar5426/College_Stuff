@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 def find_rows_columns(matrix):
     matrix_array = np.array(matrix)
 
@@ -27,7 +26,7 @@ zero_matrix = np.diag(diagonal_elements)
 print("5x5 Zero Matrix with Diagonal Elements:")
 print(zero_matrix)
 
-# Write a numpy program to compare sum of all elements ,sum of each row to sum of each column in a givenh matrix
+# Write a numpy program to compare sum of all elements ,sum of each row to sum of each column in a given matrix
 
 your_matrix_here = np.array([[1, 2, 3],
                              [4, 5, 6],

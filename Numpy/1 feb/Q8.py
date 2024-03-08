@@ -7,6 +7,5 @@ def generate_otp():
         otp += str(random.randint(0, 9))
     return otp
 
-
 otp = generate_otp()
 print("Generated OTP:", otp)
