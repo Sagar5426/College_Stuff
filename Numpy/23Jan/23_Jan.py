@@ -28,7 +28,7 @@ print("___________________________")
 print("2nd Question")
 
 names = np.array(["Anuj", "Vishal", "Rohit", "Ishika", "Aman", "Keshav", "Ajay"])
-copyNames = names.copy()
+copyNames = names.view()
 
 print("Original Array: ", names)
 print("Copied Array: ", copyNames)
