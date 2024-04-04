@@ -1,0 +1,97 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-left: 45%;
+}
+
+.photo-container {
+    width: 10%;
+    height: 20%;
+    border: 1px solid black;
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 5%;
+}
+
+#academicRecordTable {
+    width: 100%;
+}
+
+.signature-container {
+    display: flex;
+    gap: 70%;
+}
+
+#academicRecordTable tr,
+#academicRecordTable td,
+#academicRecordTable th {
+    border: 1px solid black;
+    font-size: 16px; 
+    padding: 10px; 
+}
+
+p{
+    text-align: center;
+}
+
+#formBox , #formno{
+    text-align: right;
+    margin: 4px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-left: 45%;
+}
+
+.photo-container {
+    width: 10%;
+    height: 20%;
+    border: 1px solid black;
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 5%;
+}
+
+#academicRecordTable {
+    width: 100%;
+}
+
+.signature-container {
+    display: flex;
+    gap: 70%;
+}
+
+#academicRecordTable tr,
+#academicRecordTable td,
+#academicRecordTable th {
+    border: 1px solid black;
+    font-size: 16px; 
+    padding: 10px; 
+}
+
+p {
+    text-align: center;
+}
+
+#formBox, #formno {
+    text-align: right;
+    margin: 4px;
+}
+
+
+
