@@ -3,7 +3,7 @@
 #define ROW 4
 #define COL 4
 
-//front[pr] are value like 0,1,2,3
+//value changes only at index 0 in front[ROW]
 
 int front[ROW] = {-1, -1, -1, -1};
 int rear[ROW] = {-1, -1, -1, -1};
