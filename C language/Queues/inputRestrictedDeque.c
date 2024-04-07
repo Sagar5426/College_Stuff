@@ -12,7 +12,7 @@
 
 int front = -1, rear = -1;
 
-void insertionInputDeque(int queue[], int size, int element){
+void insertionInputResDeque(int queue[], int size, int element){
 
         if(front == (rear+1)%size){
         printf("Queue Overflow\n");
@@ -27,7 +27,7 @@ void insertionInputDeque(int queue[], int size, int element){
     }
 }
 
-void delInputDeque(int queue[],int size,char choice){
+void delInputResDeque(int queue[],int size,char choice){
     if(front == -1){
         printf("Deque Underflow");
         return;
@@ -51,12 +51,12 @@ void main(){
     int n = 5;
     int deque[n];
 
-    insertionInputDeque(deque,n,10);
-    insertionInputDeque(deque,n,20);
-    insertionInputDeque(deque,n,30);
-    insertionInputDeque(deque,n,40);
-    delInputDeque(deque,n,'r');
-    delInputDeque(deque,n,'f');
+    insertionInputResDeque(deque,n,10);
+    insertionInputResDeque(deque,n,20);
+    insertionInputResDeque(deque,n,30);
+    insertionInputResDeque(deque,n,40);
+    delInputResDeque(deque,n,'r');
+    delInputResDeque(deque,n,'f');
     printDeque(deque,n);
 
     
