@@ -3,14 +3,14 @@
 #define ROW 4
 #define COL 4
 
-//value changes only at index 0 in front[ROW]
+//value changes only at index 0 for pr(0) and at index 1 for pr(1) in front[ROW] and rear[ROW]
 
 int front[ROW] = {-1, -1, -1, -1};
 int rear[ROW] = {-1, -1, -1, -1};
 
 
 void insertionPriorityQueue(int queue[ROW][COL], int element, int pr) {
-    if ((front[pr] == (rear[pr] + 1) % COL) || (front[pr] == 0 && rear[pr] == COL - 1)) {
+    if (front[pr] == (rear[pr] + 1) % COL) {
         printf("Overflow\n");
         return;
     } else {
@@ -76,6 +76,16 @@ int main() {
 
     printPriorityQueue(queue);
 
-
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
