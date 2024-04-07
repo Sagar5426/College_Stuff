@@ -8,7 +8,6 @@
 int front[ROW] = {-1, -1, -1, -1};
 int rear[ROW] = {-1, -1, -1, -1};
 
-
 void insertionPriorityQueue(int queue[ROW][COL], int element, int pr) {
     if (front[pr] == (rear[pr] + 1) % COL) {
         printf("Overflow\n");
