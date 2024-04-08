@@ -58,6 +58,5 @@ void main(){
     delInputResDeque(deque,n,'r');
     delInputResDeque(deque,n,'f');
     printDeque(deque,n);
-
     
 }
