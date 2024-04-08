@@ -18,7 +18,7 @@ void insertion(int queue[],int size,int element){
     }
 }
 
-delQueue(int queue[],int size){
+void delQueue(int queue[],int size){
     if(size == -1){
         printf("Queue is Empty");
         return;
