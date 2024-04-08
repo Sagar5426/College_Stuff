@@ -11,21 +11,18 @@ void insertionOutputResDeque(int queue[], int size, int element, char choice){
         printf("Queue Overflow\n");
         return;
     }else{
-        if(rear == -1 && front == -1){
-            rear = 0; front = 0;
-        }
 
-        if(choice == 'f'){
-            front = (front-1 + size) % size;
-            queue[front] = element;
+        if(rear == -1){
+            rear = 0; front = 0;
+        }else if(choice == 'f'){
+            front = (front-1+size)%size;
         }else if(choice == 'r'){
-            rear = (rear + 1) % size;
-            queue[rear] = element;
+            rear = (rear+1)%size;
         }else{
             printf("Invalid Input");
+            return;
         }
-
-
+        queue[choice == 'f' ? front : rear] = element;
     }
 }
 
@@ -49,7 +46,6 @@ void printDeque(int deque[],int size){
         return;
     }
     for(int i = front; i!= rear; i = (i+1) % size){
-        if(i == 0) continue;
         printf("%d ",deque[i]);
     }
     printf("%d\n",deque[rear]); // last element
