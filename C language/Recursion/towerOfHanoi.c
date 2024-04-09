@@ -2,7 +2,7 @@
 
 void towerOfHanoi(int n,char src, char helper, char dest){
     if(n == 1){
-        printf("Tranfer disk %d from src %c to dest %c\n",n,src,dest);
+        printf("Transfer disk %d from src %c to dest %c\n",n,src,dest);
         return;
     }
     //tranfer top n-1 disk from S to H using D as helper
