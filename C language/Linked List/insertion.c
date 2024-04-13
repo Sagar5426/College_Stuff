@@ -15,6 +15,37 @@ struct Node *insertAtFirst(struct Node *head,int data){
 
 }
 
+struct Node *insertAtIndex(struct Node *head, int data, int index){
+    struct Node *ptr = (struct Node *) malloc (sizeof(struct Node));
+    struct Node *p = head; //previous Index node
+    int i = 0;
+
+    while(i != index-1){
+        p = p -> next;
+        i++;
+    }
+
+    ptr -> data = data;
+    ptr -> next = p -> next; //assigning our node next(address) to previous index node next(address) 
+    p -> next = ptr;
+
+    return  head; //no changes in head
+
+}
+
+struct Node *insertAtEnd(struct Node *head, int data){
+    struct Node *ptr = (struct Node *) malloc (sizeof(struct Node));
+    ptr -> data = data;
+    struct Node *p = head;
+
+    while (p -> next != NULL){
+        p = p -> next;
+    }
+    p -> next = ptr;
+    ptr ->next = NULL;
+    return head;  //no change in head
+    
+}
 
 void linkedListTraversal(struct Node *ptr){
     printf("Elements: ");
@@ -35,21 +66,29 @@ void main(){
     third = (struct Node *) malloc (sizeof(struct Node));
 
     // Link first and second node
-    head -> data = 7;                // -> used to access struct property
+    head -> data = 10;                // -> used to access struct property
     head -> next = second;
 
     // Link second and third node
-    second -> data = 8;
+    second -> data = 20;
     second -> next = third;
 
     // Terminate list at third node
-    third -> data = 9;
+    third -> data = 30;
     third -> next = NULL;
 
     linkedListTraversal(head);
 
-    head = insertAtFirst(head,10);
+    head = insertAtFirst(head,5);
     printf("\n");
+    linkedListTraversal(head);
+
+    printf("\n");
+    insertAtIndex(head,25,3);
+    linkedListTraversal(head);
+
+    printf("\n");
+    insertAtEnd(head,35);
     linkedListTraversal(head);
     
 }

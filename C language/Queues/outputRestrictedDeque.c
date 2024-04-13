@@ -63,3 +63,9 @@ void main(){
 
     printDeque(queue,n);
 }
+
+
+
+
+
+

@@ -8,7 +8,7 @@ int top = -1;
 void push(int element){
     if (top == maxSize - 1){
         printf("Stack Overflow error \n");
-        return;
+        return; 
     }else{
         top++;
         stack[top] = element;

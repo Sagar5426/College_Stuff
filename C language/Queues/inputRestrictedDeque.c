@@ -8,8 +8,6 @@
 // 2) Output-Restricted Deque: This type of deque allows insertion from both ends, 
 // namely the front and the rear. However, deletion is restricted to only the rear end.
 
-
-
 int front = -1, rear = -1;
 
 void insertionInputResDeque(int queue[], int size, int element){
