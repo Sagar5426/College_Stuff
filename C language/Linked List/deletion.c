@@ -50,6 +50,56 @@ void linkedListTraversal(struct Node *ptr){
         printf("%d ",ptr -> data);
         ptr = ptr -> next; 
     }
+    printf("\n");
+}
+
+// Case 1: Deleting first element from the linked list
+struct Node * deleteAtFirst(struct Node * head){
+    struct Node * ptr = head;
+    head = head -> next;
+    free(ptr);
+    return head;
+}
+
+// Case 2: Deleting the element at a given index from the linked list
+struct Node * deleteAtIndex(struct Node * head,int index){
+    struct Node * p = head;
+    struct Node * q = head -> next;
+    for(int i = 0; i < index-1; i++){
+        p = p -> next;
+        q = q -> next;
+    }
+    p -> next = q -> next;
+    free(q);
+    return head;
+}
+
+// Case 3: Deleting the last element
+struct Node * deleteAtLast(struct Node * head){
+    struct Node * p = head;
+    struct Node * q = head -> next;
+    while(q -> next != NULL){
+        p = p -> next;
+        q = q -> next;
+    }
+    p -> next = NULL;
+    free(q);
+    return head;
+}
+
+// Case 4: Deleting the element with a given value from the linked list
+struct Node * deleteWithValue(struct Node * head,int key){
+    struct Node * p = head;
+    struct Node * q = head -> next;
+    while(q -> data != key && q->next != NULL){
+        p = p -> next;
+        q = q -> next;
+    }
+    if(q->data == key){
+    p -> next = q -> next;
+    free(q);
+    }
+    return head;
 }
 
 void main(){
@@ -77,16 +127,27 @@ void main(){
     linkedListTraversal(head);
 
     head = insertAtFirst(head,5);
-    printf("\n");
     linkedListTraversal(head);
 
-    printf("\n");
     insertAtIndex(head,25,3);
     linkedListTraversal(head);
 
-    printf("\n");
     insertAtEnd(head,35);
-    linkedListTraversal(head);  
+    linkedListTraversal(head); 
+
+    printf("\n-------After deletion-------\n");
+    head = deleteAtFirst(head); //delete 5
+    linkedListTraversal(head);
+
+    deleteAtIndex(head,1); //delete 20
+    linkedListTraversal(head);
+
+    deleteAtLast(head); //delete 35
+    linkedListTraversal(head);
+
+    deleteWithValue(head,25); //delete 25
+    linkedListTraversal(head);
+
 }
 
 
