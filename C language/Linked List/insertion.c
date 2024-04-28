@@ -44,7 +44,7 @@ struct Node *insertAtEnd(struct Node *head, int data){
     return head;  //no change in head
 }
 
-void linkedListTraversal(struct Node *ptr){
+void printLL(struct Node *ptr){
     printf("Elements: ");
     while(ptr != NULL){
         printf("%d ",ptr -> data);
@@ -74,19 +74,19 @@ void main(){
     third -> data = 30;
     third -> next = NULL;
 
-    linkedListTraversal(head);
+    printLL(head);
 
     head = insertAtFirst(head,5);
     printf("\n");
-    linkedListTraversal(head);
+    printLL(head);
 
     printf("\n");
     insertAtIndex(head,25,3);
-    linkedListTraversal(head);
+    printLL(head);
 
     printf("\n");
     insertAtEnd(head,35);
-    linkedListTraversal(head);  
+    printLL(head);  
 }
 
 
