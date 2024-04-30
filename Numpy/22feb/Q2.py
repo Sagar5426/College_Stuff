@@ -12,7 +12,6 @@ print(np.min(arr1))
 
 # minimum takes two arrays as input tells which one is shorter
 
-
 arr2 = np.array([3, 5, 2])
 arr3 = np.array([1, 6, 4])
 

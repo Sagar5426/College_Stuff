@@ -23,7 +23,8 @@ scalar_array = np.array(42)
 print("Shape of scalar_array:", scalar_array.shape)  # Output: () empty brackets
 
 # 2-dimensional array (matrix)
-arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+arr_2d = np.array([[1, 2, 3],
+                   [4, 5, 6]])
 print("Shape of arr_2d:", arr_2d.shape)  # Output: (2, 3) - 2-dimensional array with 2 rows and 3 columns
 
 # Printing the item size (number of bytes per element) of the array 'arr'
@@ -35,7 +36,9 @@ print(arr2d.shape)  # Printing the shape of the array (number of rows and column
 print(arr2d.reshape(3, 2))  # Reshaping the array to have 3 rows and 2 columns and printing it
 
 # Creating a 3-dimensional array 'arr3d'
-arr3d = np.array([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])
+arr3d = np.array([[[1, 2, 3],
+                   [4, 5, 6],
+                   [7, 8, 9]]])
 print(arr3d)  # Printing the 3-dimensional array
 print()
 print(arr2d)  # Printing the previously created 2-dimensional array 'arr2d'
