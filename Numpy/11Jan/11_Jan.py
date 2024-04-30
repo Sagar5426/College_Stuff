@@ -3,7 +3,7 @@ import numpy as np
 # Creating a 1-dimensional array 'arr' containing integers from 1 to 6
 arr = np.array([1, 2, 3, 4, 5, 6])
 print(arr)  # Printing the array
-print(type(arr))  # Printing the type of the array
+print(type(arr))  # Printing the type of the object (i.e. nd array)
 
 # Creating a zero-dimensional array 'zeroDimenArr' with a single element 43
 zeroDimenArr = np.array(43)
