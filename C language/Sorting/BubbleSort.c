@@ -1,6 +1,6 @@
 #include <stdio.h>
+
 void bubbleSort(int arr[], int size){
-    int max = arr[0];
     int totalSwap = 0;
     // bool isSwapped = false;
     for(int turn = 0; turn < size-1; turn++){

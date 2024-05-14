@@ -2,20 +2,22 @@
 
 #include <stdio.h>
 #include <math.h>
+
 double simpleInterest(double principle, double rate, double time){
     double total = (principle*rate*time)/100;
     return total;
 }
+
 double compoundInterest(double principle, double rate, double time){
     double amount = principle * pow(1+rate/100 , time);
     double compoundInterest = amount - principle;
     return compoundInterest;
 }
+
 void main(){
     double principle, rate, time;
     char choice;
     
-
     printf("Choose simpleInterest Or compoundInterest: s or c: ");
     scanf("%c",&choice);
 
