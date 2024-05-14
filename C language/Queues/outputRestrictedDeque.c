@@ -11,7 +11,6 @@ void insertionOutputResDeque(int queue[], int size, int element, char choice){
         printf("Queue Overflow\n");
         return;
     }else{
-
         if(rear == -1){
             rear = 0; front = 0;
         }else if(choice == 'f'){

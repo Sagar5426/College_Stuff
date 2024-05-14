@@ -55,6 +55,7 @@ void printDeque(int deque[],int size){
     }
     printf("%d\n",deque[rear]); // last element
 }
+
 void main(){
     int n = 5;
     int deque[n];
