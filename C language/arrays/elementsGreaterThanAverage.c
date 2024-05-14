@@ -12,6 +12,7 @@ int elementGreaterThanAverage(int arr[],int size){
     }
     return count;
 }
+
 void main(){
     int arr[] = {1,7,15,6,8};
     printf("%d ", elementGreaterThanAverage(arr,5));
