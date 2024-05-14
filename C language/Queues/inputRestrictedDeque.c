@@ -30,6 +30,9 @@ void delInputResDeque(int queue[],int size,char choice){
         printf("Deque Underflow");
         return;
     }else{
+        if(front == rear && (choice == 'r' || choice == 'f')){
+            front = -1; rear = -1;
+        }
         if(choice == 'r'){
             rear = (rear-1 + size) % size; // for rear = 0 case 
         }else if(choice == 'f'){
@@ -38,13 +41,20 @@ void delInputResDeque(int queue[],int size,char choice){
             printf("Wrong input\n");
             return;
         }
-
-        if(front == (rear+1)%size){
-            front = -1; rear = -1;
-        }
     }
 }
 
+void printDeque(int deque[],int size){
+    printf("Deque Elements: ");
+    if(front == -1 && rear ==-1){
+        printf("Deque Underflow\n");
+        return;
+    }
+    for(int i = front; i!= rear; i = (i+1) % size){
+        printf("%d ",deque[i]);
+    }
+    printf("%d\n",deque[rear]); // last element
+}
 void main(){
     int n = 5;
     int deque[n];
