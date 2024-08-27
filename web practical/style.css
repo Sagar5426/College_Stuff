@@ -1,0 +1,21 @@
+body {
+    
+    margin: 10px;
+    padding: 10px;
+}
+
+.container {
+    color:orange;
+    display: flex;
+    
+
+    justify-content: center;
+   
+}
+
+form {
+    width: 200px;
+    border: 1px solid black;
+    padding: 20px;
+    
+}

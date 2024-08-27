@@ -1,4 +1,4 @@
-#Q3. Write a Numpy program to create 3 different arrays of 10 zeroes,
+# Q3. Write a Numpy program to create 3 different arrays of 10 zeroes,
 # 10 ones & 10 eights.
 
 import numpy as np

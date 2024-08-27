@@ -5,3 +5,5 @@ import numpy as np
 
 random_num = np.random.rand(3, 2, 4)
 print(random_num)
+
+

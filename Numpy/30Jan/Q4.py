@@ -1,4 +1,4 @@
-#Q4. Write a numpy program to create an array of integers from 30 to 70
+# Q4. Write a numpy program to create an array of integers from 30 to 70
 
 import numpy as np
 

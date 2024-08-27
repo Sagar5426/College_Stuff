@@ -30,4 +30,3 @@ stringArr = np.array(["Sagar", "Priyanshu", "Abhishek", "Rohit"])
 stringMemorySize = stringArr.nbytes
 print("String Array: ", stringArr)
 print("Memory Size: ", stringMemorySize, "bytes")
-
