@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4x4 Grid Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+        }
+        .calculator {
+            width: 260px;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+        input {
+            width: 92%;
+            padding: 10px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            background: #444;
+            color: white;
+            border-radius: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #555;
+        }
+        .wide {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="grid">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('*')">×</button>
+            <button onclick="appendToDisplay('-')">-</button>
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')">+</button>
+
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="calculateResult()">=</button>
+
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="calculateTrig('sin')">sin</button>
+
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculateTrig('cos')">cos</button>
+            <button onclick="calculateTrig('tan')">tan</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (e) {
+                alert('Invalid Expression');
+            }
+        }
+
+        function calculateTrig(func) {
+            let value = parseFloat(document.getElementById('display').value);
+            if (isNaN(value)) {
+                alert('Enter a number first');
+                return;
+            }
+            let result = 0;
+            if (func === 'sin') result = Math.sin(value * Math.PI / 180);
+            if (func === 'cos') result = Math.cos(value * Math.PI / 180);
+            if (func === 'tan') result = Math.tan(value * Math.PI / 180);
+            
+            document.getElementById('display').value = result.toFixed(6);
+        }
+    </script>
+
+</body>
+</html>
