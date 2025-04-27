@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="myForm">
+            <label>Roll no: </label>
+            <input type="text" id="rollno">
+            <div class="error" id="rollnoError"></div>
+            <Button type = "button" onclick="validateInput()">Submit</Button>
+        </form>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        let user = [];
+
+        function validateInput() {
+            
+
+            let rollno = document.getElementById("rollno").value.trim();
+            document.getElementById("rollnoError").innerText = "";
+
+            if(!/^[a-z]+\.\d{3}[a-z]+\d{3}@sushantuniversity\.edu\.in$/.test(rollno)) {
+                document.getElementById("rollnoError").innerText = "Roll no format is wrong \n eg: sagar.230bca202@sushantuniversity.edu.in";
+                alert("Roll no format is wrong \n eg: sagar.230bca202@sushantuniversity.edu.in");
+                return;
+                
+            }
+
+            document.getElementById("result").innerText = "Successful";
+            
+        }
+
+    </script>
+</body>
+</html>

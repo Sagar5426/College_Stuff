@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid gray;
+        }
+        body {
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        .container {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: yellow;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        label {
+            margin: 5px 0;
+        }
+        
+        input {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        
+        button {
+            background: yellow;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <label>Full Name:</label>
+            <input type="text" id="fullname">
+            <div class="error" id="nameError"></div>
+
+            <label>Email Address:</label>
+            <input type="email" id="email">
+            <div class="error" id="emailError"></div>
+
+            <label>Phone Number:</label>
+            <input type="text" id="phone">
+            <div class="error" id="phoneError"></div>
+
+            <label>Password:</label>
+            <input type="password" id="password">
+            <div class="error" id="passwordError"></div>
+
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </div>
+
+    <h2>Registered Users</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let users = [];
+
+        function validateInput() {
+            let isValid = true;
+
+            let fullname = document.getElementById("fullname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            document.getElementById("nameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("phoneError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+
+            if (!/^[A-Za-z\s]{3,50}$/.test(fullname)) {
+                document.getElementById("nameError").innerText = "Only alphabets (3-50 characters).";
+                isValid = false;
+            }
+            if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid email format.";
+                isValid = false;
+            }
+            if (!/^\d{10}$/.test(phone)) {
+                document.getElementById("phoneError").innerText = "Phone number must be exactly 10 digits.";
+                isValid = false;
+            }
+            if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+                document.getElementById("passwordError").innerText = "Password must have 8+ chars, 1 uppercase, 1 lowercase, 1 number, and 1 special character.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function registerUser() {
+            if (!validateInput()) return;
+
+            let user = {
+                fullname: document.getElementById("fullname").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                password: document.getElementById("password").value.trim(),
+            };
+
+            users.push(user);
+            updateTable();
+
+            document.getElementById("registrationForm").reset();
+        }
+
+        function updateTable() {
+            let tableBody = document.getElementById("userTable").getElementsByTagName("tbody")[0];
+            tableBody.innerHTML = "";
+
+            users.forEach(user => {
+                let row = tableBody.insertRow();
+                row.insertCell(0).textContent = user.fullname;
+                row.insertCell(1).textContent = user.email;
+                row.insertCell(2).textContent = user.phone;
+                row.insertCell(3).textContent = user.password;
+            });
+        }
+    </script>
+
+</body>
+</html>
