@@ -1,0 +1,75 @@
+<!-- 
+    Design a webpage with two columns:
+• Left: Navigation (20% width)
+• Right: Content (80% width)
+• Make it responsive: Stack columns vertically on smaller screens.
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two Column Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    .nav {
+      width: 20%;
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+    }
+
+    .content {
+      width: 80%;
+      background-color: #f4f4f4;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .nav, .content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="nav">
+      <h2>Navigation</h2>
+      <ul>
+        <li><a href="#" style="color: white;">Home</a></li>
+        <li><a href="#" style="color: white;">About</a></li>
+        <li><a href="#" style="color: white;">Services</a></li>
+        <li><a href="#" style="color: white;">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>Welcome</h1>
+      <p>This is the main content area. Resize the browser window to see the layout change.</p>
+    </div>
+  </div>
+
+</body>
+</html>

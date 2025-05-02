@@ -1,0 +1,93 @@
+<!-- 
+14. Design a Responsive Card Grid
+Create a layout with 6 cards arranged in:
+• 3 columns on desktop
+• 2 on tablet
+• 1 on mobile
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Card Grid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    /* Tablet - 2 columns */
+    @media (max-width: 992px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile - 1 column */
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Card Grid</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Card 1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="card">
+      <h3>Card 2</h3>
+      <p>Molestias veniam corporis architecto vero reiciendis!</p>
+    </div>
+    <div class="card">
+      <h3>Card 3</h3>
+      <p>Sunt officia placeat qui aspernatur soluta!</p>
+    </div>
+    <div class="card">
+      <h3>Card 4</h3>
+      <p>Alias voluptas ducimus, minus quibusdam illum?</p>
+    </div>
+    <div class="card">
+      <h3>Card 5</h3>
+      <p>Expedita voluptatem quisquam magni laboriosam libero?</p>
+    </div>
+    <div class="card">
+      <h3>Card 6</h3>
+      <p>Corrupti inventore aliquid ipsa officiis esse.</p>
+    </div>
+  </div>
+
+</body>
+</html>

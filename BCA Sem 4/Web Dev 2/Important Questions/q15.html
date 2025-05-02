@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sticky Header with Scroll</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Sticky Header</h2>
+  </header>
+
+  <main>
+    <h3>Scrollable Content</h3>
+    <p>
+      <!-- Repeat a paragraph many times for demonstration -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper aliquam quis mattis quam. <br><br>
+      <!-- You can generate more using JS or copy-paste manually -->
+      lorem*1000
+    </p>
+
+    <script>
+      // Generate lots of paragraphs to simulate 1 lakh words
+      for(let i = 0; i < 1000; i++) {
+        const p = document.createElement('p');
+        p.textContent = `Paragraph ${i + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
+        document.querySelector('main').appendChild(p);
+      }
+    </script>
+  </main>
+
+  <footer>
+    &copy; 2025 Your Footer
+  </footer>
+
+</body>
+</html>

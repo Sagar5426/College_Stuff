@@ -1,0 +1,143 @@
+<!-- 
+10. Create a 3-question quiz where User selects answers (radio buttons)and After submitting, show score
+• HTML for questions and options
+• CSS for layout
+• JavaScript for logic and scoring
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-container {
+      background: #333;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .question {
+      margin-bottom: 1rem;
+    }
+
+    .question p {
+      margin: 0.5rem 0;
+    }
+
+    .options label {
+      display: block;
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #1f6feb;
+      color: white;
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1a5ec8;
+    }
+
+    .score {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>Quiz Time</h2>
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What is the capital of France?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> A. Berlin</label>
+          <label><input type="radio" name="q1" value="B"> B. Madrid</label>
+          <label><input type="radio" name="q1" value="C"> C. Paris</label>
+          <label><input type="radio" name="q1" value="D"> D. Rome</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. What is 5 + 3?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="A"> A. 5</label>
+          <label><input type="radio" name="q2" value="B"> B. 7</label>
+          <label><input type="radio" name="q2" value="C"> C. 8</label>
+          <label><input type="radio" name="q2" value="D"> D. 9</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. Who wrote "Romeo and Juliet"?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="A"> A. William Shakespeare</label>
+          <label><input type="radio" name="q3" value="B"> B. Charles Dickens</label>
+          <label><input type="radio" name="q3" value="C"> C. Mark Twain</label>
+          <label><input type="radio" name="q3" value="D"> D. Jane Austen</label>
+        </div>
+      </div>
+
+      <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div class="score" id="score"></div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      // Correct answers
+      const correctAnswers = {
+        q1: 'C',
+        q2: 'C',
+        q3: 'A'
+      };
+
+      let score = 0;
+      const form = document.getElementById("quizForm");
+      const userAnswers = new FormData(form);
+
+      // Check answers and calculate score
+      for (const [question, answer] of userAnswers.entries()) {
+        if (answer === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      // Display the score
+      document.getElementById("score").textContent = `Your Score: ${score} / 3`;
+    }
+  </script>
+
+</body>
+</html>
